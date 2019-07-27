@@ -28,19 +28,21 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        overflow: hidden;
 
-        &::after{
-            content: "";
+        &:hover .glare{
+            opacity: 0.2;
+            transition: opacity 0.52s ease;
+        }
+        .glare{
             width: 50px;
             height: 50px;
             position: absolute;
-            // top: 50%;
-            // left: 50%;
-            // transform: translate(-50%, -50%);
-            // background: #fff;
-            opacity: 0.2;
+            transform: translate(-50%, -50%);
+            background: rgb(255, 255, 255);
+            opacity: 0;
             border-radius: 50%;
-            filter: blur(20px);
+            filter: blur(25px);
           }
 
         span{
