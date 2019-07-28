@@ -56,8 +56,8 @@
 }
 
 .cont button:active {
-  -webkit-transform: translate(-50%, -50%) translateZ(-20px);
-          transform: translate(-50%, -50%) translateZ(-20px);
+  -webkit-transform: translate(-50%, -50%) translateZ(-22px);
+          transform: translate(-50%, -50%) translateZ(-22px);
 }
 
 .cont button:hover .glare {
@@ -75,8 +75,8 @@
   border-radius: 50%;
   -webkit-filter: blur(35px);
           filter: blur(35px);
-  -webkit-transition: opacity 0.32s cubic-bezier(0.76, 0.08, 0.26, 1.34);
-  transition: opacity 0.32s cubic-bezier(0.76, 0.08, 0.26, 1.34);
+  -webkit-transition: opacity 0.32s cubic-bezier(0.34, 0.34, 0.17, 1.55);
+  transition: opacity 0.32s cubic-bezier(0.34, 0.34, 0.17, 1.55);
 }
 
 .cont button span {
@@ -100,8 +100,8 @@
   -webkit-transform: translate(-50%, -50%) rotateX(var(--rx, 0)) rotateY(var(--ry, 0));
           transform: translate(-50%, -50%) rotateX(var(--rx, 0)) rotateY(var(--ry, 0));
   overflow: hidden;
-  -webkit-transition: 0.22s cubic-bezier(0.76, 0.08, 0.26, 1.34);
-  transition: 0.22s cubic-bezier(0.76, 0.08, 0.26, 1.34);
+  -webkit-transition: 0.22s cubic-bezier(0.34, 0.34, 0.17, 1.55);
+  transition: 0.22s cubic-bezier(0.34, 0.34, 0.17, 1.55);
 }
 
 #button2:hover .glare2 {
