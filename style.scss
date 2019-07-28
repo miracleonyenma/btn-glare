@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Bitter|Noto+Serif|PT+Serif|Roboto+Slab|Work+Sans&display=swap');
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
   }
   
   .main {
@@ -19,8 +21,16 @@
     transform-style: preserve-3d;
     perspective: (700px);
     text-align: center;
-
+    margin:0 10%;
+    font-family: 'Bitter', serif;
+    font-family: 'PT Serif', serif;
+    font-family: 'Roboto Slab', serif;
+    //font-family: 'Noto Serif', serif;
+    //font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+  
     button {
+        font-family: 'Work Sans', sans-serif;
         width: 12em;
         height: 5em;
         background: linear-gradient(90deg, #0038ff, #7331ea);
@@ -46,7 +56,7 @@
             opacity: 0;
             border-radius: 50%;
             filter: blur(35px);
-            transition: opacity 0.32s ease;
+            transition: opacity 0.32s cubic-bezier(.76,.08,.26,1.34);
 
           }
 
@@ -71,7 +81,7 @@
     left: 50%;
     transform: translate(-50%, -50%) rotateX(var(--rx, 0)) rotateY(var(--ry, 0)); //rotateY(20deg);
     overflow: hidden;
-    transition: 0.22s ease;
+    transition: 0.22s cubic-bezier(.76,.08,.26,1.34);
 
     &:hover .glare2{
         opacity: 0.15;
