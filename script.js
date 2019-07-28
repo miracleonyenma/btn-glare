@@ -2,7 +2,12 @@ var button = document.querySelector("button"),
 btncoords = button.getBoundingClientRect(),
 glare = document.querySelector("button .glare"),
 posX, 
-posY;
+posY
+styles = document.documentElement.style;
+button2 = document.querySelector("#button2"),
+btncoords2 = button2.getBoundingClientRect(),
+glare2 = document.querySelector("#button2 .glare2");
+
 
 function follow(e){
     posX = ((e.clientX - btncoords.left) - 25) / 1 + "px";
@@ -10,19 +15,12 @@ function follow(e){
     // rotX = ((e.clientX - btncoords.left) - 50) / 8 + "deg";
     // rotY = ((e.clientX - btncoords.top) - 50) / 8 + "deg";
 
-
-    glare.style.transform = "translate(" + posX + "," + posY + ")";
-    // button.style.transform = "rotateY(" + rotY + ")" + "rotateX(" + rotX + ")";
+    styles.setProperty("--tx", `${posX}`);  
+    styles.setProperty("--ty", `${posY}`);  
     console.log("translate(" + posX + "," + posY + ")");
 }
 
 button.addEventListener('mousemove', follow);
-
-var 
-styles = document.documentElement.style;
-button2 = document.querySelector("#button2"),
-btncoords2 = button2.getBoundingClientRect(),
-glare2 = document.querySelector("#button2 .glare2");
 
 function rotate(e){
     console.log({clntX:e.clientX, clntY:e.clientY, scrnX:e.screenX, scrnY:e.screenY});

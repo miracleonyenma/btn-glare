@@ -6,6 +6,10 @@
           box-sizing: border-box;
 }
 
+button {
+  cursor: pointer;
+}
+
 .main {
   width: 100%;
   height: 100vh;
@@ -64,19 +68,29 @@
   opacity: 0.4;
 }
 
+.cont button:active .glare {
+  opacity: 0.4;
+  -webkit-filter: blur(0);
+          filter: blur(0);
+  -webkit-transform: translate(var(--tx, 0), var(--ty, 0)) scale(2);
+          transform: translate(var(--tx, 0), var(--ty, 0)) scale(2);
+}
+
 .cont button .glare {
   width: 50px;
   height: 50px;
   position: absolute;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translate(var(--tx, 0), var(--ty, 0));
+          transform: translate(var(--tx, 0), var(--ty, 0));
   background: white;
   opacity: 0;
   border-radius: 50%;
   -webkit-filter: blur(35px);
           filter: blur(35px);
-  -webkit-transition: opacity 0.32s cubic-bezier(0.34, 0.34, 0.17, 1.55);
-  transition: opacity 0.32s cubic-bezier(0.34, 0.34, 0.17, 1.55);
+  -webkit-transition: opacity 0.32s cubic-bezier(0.82, -0.87, 0.11, 1.75), scale 0.12s cubic-bezier(0.79, 0.32, 0.11, 1.75), -webkit-filter 0.2s ease;
+  transition: opacity 0.32s cubic-bezier(0.82, -0.87, 0.11, 1.75), scale 0.12s cubic-bezier(0.79, 0.32, 0.11, 1.75), -webkit-filter 0.2s ease;
+  transition: opacity 0.32s cubic-bezier(0.82, -0.87, 0.11, 1.75), filter 0.2s ease, scale 0.12s cubic-bezier(0.79, 0.32, 0.11, 1.75);
+  transition: opacity 0.32s cubic-bezier(0.82, -0.87, 0.11, 1.75), filter 0.2s ease, scale 0.12s cubic-bezier(0.79, 0.32, 0.11, 1.75), -webkit-filter 0.2s ease;
 }
 
 .cont button span {
@@ -118,6 +132,10 @@
           transform: translate(-50%, -50%) rotateX(var(--rx, 0)) rotateY(var(--ry, 0)) translateZ(-20px);
 }
 
+#button2:active .glare2 {
+  opacity: 0.25;
+}
+
 #button2:active span {
   -webkit-transform: translate(-50%, -50%) rotateX(var(--rx, 0)) rotateY(var(--ry, 0)) translateZ(40px);
           transform: translate(-50%, -50%) rotateX(var(--rx, 0)) rotateY(var(--ry, 0)) translateZ(40px);
@@ -136,8 +154,10 @@
   border-radius: 50%;
   -webkit-filter: blur(30px);
           filter: blur(30px);
-  -webkit-transition: 0.32s ease;
-  transition: 0.32s ease;
+  -webkit-transition: opacity 0.82s ease, -webkit-transform 0.32s ease-out;
+  transition: opacity 0.82s ease, -webkit-transform 0.32s ease-out;
+  transition: transform 0.32s ease-out, opacity 0.82s ease;
+  transition: transform 0.32s ease-out, opacity 0.82s ease, -webkit-transform 0.32s ease-out;
 }
 
 #button2 span {

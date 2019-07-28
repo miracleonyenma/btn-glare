@@ -5,6 +5,10 @@
     box-sizing: border-box;
     
   }
+
+  button{
+      cursor: pointer;
+  }
   
   .main {
     width: 100%;
@@ -49,16 +53,24 @@
         &:hover .glare{
             opacity: 0.4;
         }
+
+        &:active .glare{
+            opacity: 0.4;
+            filter: blur(0);
+            transform: translate(var(--tx, 0), var(--ty, 0)) scale(2);
+
+        }
+        
         .glare{
             width: 50px;
             height: 50px;
             position: absolute;
-            transform: translate(-50%, -50%);
+            transform: translate(var(--tx, 0), var(--ty, 0));
             background: rgb(255, 255, 255);
             opacity: 0;
             border-radius: 50%;
             filter: blur(35px);
-            transition: opacity 0.32s cubic-bezier(0.34, 0.34, 0.17, 1.55);
+            transition: opacity 0.32s cubic-bezier(0.82,-0.87, 0.11, 1.75), filter 0.2s ease, scale 0.12s cubic-bezier(0.79, 0.32, 0.11, 1.75);
 
           }
 
@@ -96,6 +108,9 @@
     &:active{
         transform:translate(-50%, -50%) rotateX(var(--rx, 0)) rotateY(var(--ry, 0)) translateZ(-20px) ;
     }
+    &:active .glare2{
+        opacity: 0.25;
+    }
     &:active span{
         transform:translate(-50%, -50%) rotateX(var(--rx, 0)) rotateY(var(--ry, 0)) translateZ(40px) ;
     }
@@ -111,7 +126,7 @@
         opacity: 0.1;
         border-radius: 50%;
         filter: blur(30px);
-        transition: 0.32s ease;
+        transition: transform 0.32s ease-out, opacity 0.82s ease;
     
       }
     
