@@ -55,6 +55,11 @@
   overflow: hidden;
 }
 
+.cont button:active {
+  -webkit-transform: translate(-50%, -50%) translateZ(-20px);
+          transform: translate(-50%, -50%) translateZ(-20px);
+}
+
 .cont button:hover .glare {
   opacity: 0.4;
 }

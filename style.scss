@@ -43,7 +43,9 @@
         left: 50%;
         transform: translate(-50%, -50%); //rotateY(20deg);
         overflow: hidden;
-
+        &:active{
+            transform: translate(-50%, -50%) translateZ(-20px); //rotateY(20deg);
+        }
         &:hover .glare{
             opacity: 0.4;
         }
